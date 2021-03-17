@@ -30,10 +30,16 @@ scrape_art_info <- function(x){
 
 # load data to get links -------------------------------------------------------
 
+library(readr)
+uoe_art <- read_csv("data/uoe-art.csv")
+View(uoe_art)
 uoe_art <- read_csv("data/uoe_art.csv")
 
 # apply function ---------------------------------------------------------------
 
-scrape_art_info(uoe_art$link[1])
-scrape_art_info(___)
-scrape_art_info(___)
+scrape_art_info(uoe_art$link[1]) %>%
+  glimpse()
+scrape_art_info(uoe_art$link[2]) %>%
+  glimpse()
+scrape_art_info(uoe_art$link[3]) %>%
+  glimpse()
